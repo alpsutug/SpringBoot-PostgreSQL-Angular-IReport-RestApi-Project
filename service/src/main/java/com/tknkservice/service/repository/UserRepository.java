@@ -1,0 +1,13 @@
+package com.tknkservice.service.repository;
+
+import com.tknkservice.service.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+
+    List<User> getUserByUsernameEquals(String username);
+
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <title>MachWorld</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-scholar.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../template/vendors/codemirror/codemirror.css">
+    <link rel="stylesheet" href="../template/vendors/codemirror/ambiance.css">
+    <link rel="stylesheet" href="../template/vendors/pwstabs/jquery.pwstabs.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/favicon.png"/>
+
+
+</head>
+
+<body>
+
+<div class="contact-us section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                    <h3 class="mb-4">Bize Ulaşın!</h3>
+                    <div id="form-message-warning" class="mb-4"></div>
+                    <div id="form-message-success" class="mb-4">
+                        Yandaki formu doldurarak bizimle iletişime geçebilirsiniz.
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <p>Ayrıca iletişim için:</p>
+                            </div>
+                            <p></p>
+                            <br>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <p><img src="images/telephone.png" id="imgresim2"> &nbsp; <strong>Phone:</strong> +90
+                                    123 456 78 90</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <p><img src="images/email.png" id="imgresim3"> &nbsp;&nbsp;<strong>Email:</strong>
+                                    fenercealp7@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+
+                                <p><img src="images/location.png"
+                                        id="imgresim">&nbsp;&nbsp;&nbsp;<strong>Address:</strong> Ziraat, Yeni Ziraat
+                                    Mahallesi, Etlik Cd Dışkapı, Etlik Cd No:12, 06110 Altındağ/Ankara</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p>
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OaKG9jDpMPc1-Grx_lqkDdpNPUwDrvo&ehbc=2E312F"
+                            width="600" height="400"></iframe>
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="contact-us-content">
+                    <div id="iletisimform">İletişim Formu</div>
+                    <form id="contact-form" action="https://formspree.io/f/moqooqov" method="post" target="_blank">
+                        <div class="row">
+
+                            <div class="col-lg-12">
+
+                                <fieldset>
+
+                                    <input type="name" name="name" id="name" placeholder="Adınız..." autocomplete="on"
+                                           required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                           placeholder="E-Mail Adresiniz..." required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <textarea name="message" id="message" placeholder="Mesajınız"
+                                              onkeypress="ornek()"></textarea>
+                                    <br><br>
+                                    <div style="width: 600px;" class="yazırenk"> Kullanılan Karakter Sayısı : <strong
+                                            id="kullanılankarakter">0</strong></div>
+                                    <div style="width: 600px;" class="yazırenk"> Kalan Karakter Sayısı : <strong
+                                            id="kalankarakter">250</strong></div>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <p>
+
+                                </p>
+                                <br>
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="orange-button">Bize Mesaj Gönder
+                                    </button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+
+    <div class="container">
+
+        <div class="col-lg-12">
+
+            <p c id="alp">&copy; 2023 Alpsu Tuğ</p>
+
+            <div id="kayanyazi">
+                <marquee onmouseover="this.stop()" onmouseout="this.start()">MachWorld dünyasına hoşgeldiniz...
+                </marquee>
+            </div>
+            <center style="display: flex;">
+                <a href="https://www.instagram.com/alpsutug/" target="_blank" style="margin-left: 370px">
+                    <img src="images/instagramm.png" width="100" height="100">
+                </a>
+
+                <a href="https://www.facebook.com/alpsu.tug.1/" target="_blank"
+                   style="margin-left: 15px; margin-bottom: 60px">
+                    <img src="images/facebok.png" width="100" height="100">
+                </a>
+
+                <a href="https://www.youtube.com/@alpanka067" target="_blank" style="margin-left: 15px;">
+                    <img src="images/youtubee.png" width="100" height="100">
+                </a>
+
+                <a href="https://twitter.com/Alpanka06" target="_blank" style="margin-left: 15px;">
+                    <img src="images/twittt.png" width="100" height="100">
+                </a>
+
+                <a href="https://www.linkedin.com/in/alpsu-tu%C4%9F-08a27520a/" target="_blank"
+                   style="margin-left: 15px;">
+                    <img src="images/linkedn.png" width="100" height="100">
+                </a>
+            </center>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/isotope.min.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/counter.js"></script>
+<script src="assets/js/custom.js"></script>
+
+<script>
+
+    var kullanılan = 0;
+    var maximum = 249;  // 250 bir eksiği olmalı
+
+    function ornek() {
+        var baglan = document.getElementById("message");
+        var uzunluk = baglan.value.length;
+        if (uzunluk >= maximum) {
+            var deger = baglan.value;
+            var olustur = deger.substr(0, maximum);
+            document.getElementById("message").value = olustur;
+            document.getElementById("kullanılankarakter").innerHTML = maximum + 1;
+            document.getElementById("kalankarakter").innerHTML = 0;
+        } else {
+
+            var deger = baglan.value;
+            var olustur = deger.substr(0, maximum);
+            document.getElementById("message").value = olustur;
+            document.getElementById("kullanılankarakter").innerHTML = uzunluk + 1;
+            document.getElementById("kalankarakter").innerHTML = (maximum + 1) - (uzunluk + 1);
+        }
+
+    }
+
+
+</script>
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- inject:js -->
+<script src="../../js/off-canvas.js"></script>
+<script src="../../js/hoverable-collapse.js"></script>
+<script src="../../js/template.js"></script>
+<script src="../../js/settings.js"></script>
+<script src="../../js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="../../js/codeEditor.js"></script>
+<script src="../../js/tabs.js"></script>
+<script src="../../js/tooltips.js"></script>
+<script src="../../js/documentation.js"></script>
+</body>
+</html>

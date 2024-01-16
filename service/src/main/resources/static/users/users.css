@@ -1,0 +1,31 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#kullanicilar {
+    width: 100%;
+    margin-top: 20px;
+    border: 10px solid blue !important;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: 10px solid red;
+
+}
+
+#kullanicilar th,
+#kullanicilar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+
+}
+
+#kullanicilar th {
+    background-color: #F2F2F2;
+}
+
+#kullanicilar tbody tr:hover {
+    background-color: #0dcaf0;
+}

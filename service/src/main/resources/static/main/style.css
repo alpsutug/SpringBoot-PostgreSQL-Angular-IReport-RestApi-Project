@@ -1,0 +1,68 @@
+#imgresim{
+    width: 21px;
+    height: 21px;
+}
+
+#imgresim2{
+    width: 20px;
+    height: 20px;
+}
+
+#imgresim3{
+    width: 20px;
+    height: 20px;
+}
+
+.main-content{
+
+    width: 1250px;
+    height: 400px;
+
+}
+
+#alp{
+    color: white;
+}
+
+.section.team {
+    margin-top: 25px;
+}
+
+#iletisimform
+{
+
+    color: white;
+    margin-bottom: 35px;
+    margin-left: 175px;
+    font-weight: bold;
+    font-size: 19px;
+
+}
+
+
+#kayanyazi{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 40px;
+
+}
+
+#kalankarakter,#kullanılankarakter{
+
+    color: white;
+
+}
+
+.yazırenk{
+    color: white;
+}
+
+/* CSS ile iletişim için kısmı yukarı taşıma */
+.col-md-12 .form-group {
+    margin-bottom: 45px; /* İsteğe bağlı: Boşluğu ayarlamak için */
+}
+
+.form-group p {
+    margin-bottom: -40px; /* Aralarındaki boşluğu ayarlamak için */
+}
+
