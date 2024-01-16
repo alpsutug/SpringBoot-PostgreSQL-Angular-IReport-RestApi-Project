@@ -1,0 +1,73 @@
+<!--begin::Menu wrapper-->
+<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true"
+     data-kt-scroll-activate="true" data-kt-scroll-height="auto"
+     data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer"
+     data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
+  <!--begin::Menu-->
+  <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true"
+       data-kt-menu-expand="false">
+    <!-- Dashboard -->
+        <div class="menu-item">
+          <a class="menu-link without-sub" routerLink="/dashboard" routerLinkActive="active"><span class="menu-icon">
+              <span [inlineSVG]="'./assets/media/icons/duotune/general/gen025.svg'" class="svg-icon svg-icon-2"></span>
+            </span>
+            <span class="menu-title" translate="MENU.DASHBOARD"></span></a>
+        </div>
+
+    <!--    &lt;!&ndash; Layout builder &ndash;&gt;-->
+    <!--    <div class="menu-item">-->
+    <!--      <a class="menu-link without-sub" routerLink="/builder" routerLinkActive="active"><span class="menu-icon">-->
+    <!--          <span [inlineSVG]="'./assets/media/icons/duotune/general/gen019.svg'" class="svg-icon svg-icon-2"></span>-->
+    <!--        </span><span class="menu-title">Layout Builder</span></a>-->
+    <!--    </div>-->
+    <!-- Separator -->
+    <div class="menu-item">
+      <div class="menu-content pt-8 pb-2">
+        <span class="menu-section text-muted text-uppercase fs-8 ls-1" translate="MENU.APPS"></span>
+      </div>
+    </div>
+
+    <!-- Defınıtıons  appRoleId 1 demek admin girişi için bu sayfa kullanılsın 2 olursa diğer kullanıcılar zaten veritabanında ekledim görebilirsin-->
+    <div *ngIf="appRoleId === 1" class="menu-item menu-accordion" data-kt-menu-trigger="click" routerLinkActive="here show">
+      <span class="menu-link"><span class="menu-icon">
+        <span class="svg-icon svg-icon-2" [inlineSVG]="'./assets/media/icons/duotune/general/gen055.svg'"></span>
+      </span><span class="menu-title" translate="MENU.DEFINITIONS"></span>
+        <span class="menu-arrow"></span>
+      </span>
+      <div class="menu-sub menu-sub-accordion" routerLinkActive="menu-active-bg">
+        <div class="menu-item menu-accordion" routerLinkActive="here show" data-kt-menu-trigger="click">
+          <span class="menu-link"><span class="menu-bullet"><span class="bullet bullet-dot"></span></span><span
+            class="menu-title" data-link="/crafted/pages/profile" translate="MENU.GENERAL"></span><span
+            class="menu-arrow"></span></span>
+          <div class="menu-sub menu-sub-accordion" routerLinkActive="menu-active-bg">
+            <div class="menu-item">
+              <a class="menu-link without-sub" routerLinkActive="active" routerLink="/machines">
+                <span class="menu-bullet">
+                  <span class="bullet bullet-dot"></span></span><span class="menu-title" translate="MENU.MACHİNE"></span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a class="menu-link without-sub" routerLinkActive="active" routerLink="/musteriler">
+                <span class="menu-bullet">
+                  <span class="bullet bullet-dot"></span></span><span class="menu-title">Müşteriler</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a class="menu-link without-sub" routerLinkActive="active" routerLink="/bakimplan">
+                <span class="menu-bullet">
+                  <span class="bullet bullet-dot"></span></span><span class="menu-title">Bakım Plan</span>
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <!--end::Menu-->
+</div>
+<!--end::Menu wrapper-->

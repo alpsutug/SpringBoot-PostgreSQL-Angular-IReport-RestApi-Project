@@ -1,0 +1,71 @@
+<!-- begin::Row -->
+<div class="row g-5 g-xl-8">
+
+  <div class="card">
+    <div class="card-header border-0 pt-5">
+      <h3 class="card-title align-items-start flex-column">
+        <span class="card-label fw-bolder fs-3 mb-1" translate= "MENU.USERS"></span>
+        <span class="text-muted mt-1 fw-bold fs-7"></span>
+      </h3>
+      <button type="button" class="btn btn-success btn-label waves-effect waves-light btn-sm m-4" (click)="addData(row)">
+        <i class="fa fa-plus-square label-icon align-middle fs-3 me-2"></i>
+        <span  translate="USERS.ADD"></span>
+      </button>
+    </div>
+
+    <div class="card-body py-3">
+      <div class="table-responsive">
+        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+          <thead>
+          <tr class="fw-bolder text-muted bg-light">
+            <th class="text-center"><span class="hidelbl" translate="USERS.USERCODE"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.USERNAME"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.EMAIL"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.FIRSTNAME"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.LASTNAME"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.EDIT"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="USERS.DELETE"></span></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of data" (click)="openRow(row)">
+            <td class="text-center {{(selectedRow === row)?'card-selected':''}}" data-label="User Code">
+              <span><b>{{row?.id}}</b></span></td>
+            <td data-label="Username" class="text-center"><span><b>{{row?.username}}</b></span></td>
+            <td data-label="Email" class="text-center"><span><b>{{row?.email}}</b></span></td>
+            <td data-label="First name" class="text-center"><span><b>{{row?.first_name}}</b></span></td>
+            <td data-label="Last name" class="text-center"><span><b>{{row?.last_name}}</b></span></td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-label waves-effect waves-light btn-sm"
+                      (click)="editData(row)">
+                <i class="fa fa-edit label-icon align-middle fs-3 me-2"></i>
+                <span  translate="USERS.EDIT"></span>
+              </button>
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn btn-danger btn-label waves-effect waves-light btn-sm"
+                      (click)="deleteData(row)">
+                <i class="fa fa-trash label-icon align-middle fs-3 me-2"></i>
+                <span  translate="USERS.DELETE"></span>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-header card-footer pt-5 pl-15 pr-15 ">
+        <div> <span  translate="ROLES.TOTAL"></span> : <b> {{pagging.total}}</b></div>
+        <ngb-pagination [collectionSize]="pagging.total"
+                        [(page)]="pagging.page"
+                        [pageSize]="pagging.size"
+                        [maxSize]="5"
+                        (pageChange)="setPage($event);">
+        </ngb-pagination>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-user-detail [model]="detailRow" [modalTitle]="modalTitle" (cancel)="cancelDetail($event)"></app-user-detail>

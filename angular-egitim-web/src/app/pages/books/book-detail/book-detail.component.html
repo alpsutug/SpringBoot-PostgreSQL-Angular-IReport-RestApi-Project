@@ -1,0 +1,160 @@
+<div class="drawer-overlay" *ngIf="active"></div>
+<div *ngIf="active" class="modal flip show" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable {{fullscreen?'modal-fullscreen':''}} ">
+    <div *ngIf="active" class="card modal-content">
+      <div class="modal-header">
+        <h2>{{title}}</h2>
+        <div class="btn btn-sm btn-icon btn-active-color-primary" (click)="dismiss()">
+          <span class="svg-icon svg-icon-1" [inlineSVG]="'./assets/media/icons/duotune/arrows/arr001.svg'"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="modalForm" class="w-100 position-relative" autoComplete="off">
+          <input type="hidden" formControlName="id"/>
+
+
+          <div class="row">
+            <div class="col-xl-8">
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="epc_code" translate="BOOKS.EPCCODE"></label>
+                <div class="col-lg-8 fv-row">
+                  <input type="text" id="epc_code" class="form-control form-control-solid" name="epc_code"
+                         placeholder="" formControlName="epc_code"
+                         [ngClass]="{ 'is-invalid': modalForm.controls['epc_code'].invalid,
+                          'is-valid': modalForm.controls['epc_code'].valid }" />
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="mt-2 start-stop">
+                <button type="button" class="btn btn-primary btn-label waves-effect waves-light btn-sm"
+                        (click)="startReader()" [disabled]="isStartReader">
+                  <i class="fa fa-play-circle label-icon align-middle fs-3 me-2"></i>
+                  <span translate="BOOKS.START"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-8">
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="isbn_no" translate="BOOKS.ISBN"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="isbn_no" class="form-control form-control-solid" name="isbn_no"
+                    placeholder="" formControlName="isbn_no"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="author_name"
+                       translate="BOOKS.AUTHOR_NAME"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="author_name" class="form-control form-control-solid" name="author_name"
+                    placeholder="" formControlName="author_name"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="title_of_work"
+                       translate="BOOKS.TITLE_OF_WORK"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="title_of_work" class="form-control form-control-solid" name="title_of_work"
+                    placeholder="" formControlName="title_of_work" [ngClass]="{ 'is-invalid': modalForm.controls['title_of_work'].invalid,
+                          'is-valid': modalForm.controls['title_of_work'].valid }" />
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="subject" translate="BOOKS.SUBJECT"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="subject" class="form-control form-control-solid" name="subject"
+                    placeholder="" formControlName="subject"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="lc" translate="BOOKS.LC"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="lc" class="form-control form-control-solid" name="lc"
+                    placeholder="" formControlName="lc"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="place_and_year"
+                       translate="BOOKS.PLACEANDYEAR"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="place_and_year" class="form-control form-control-solid" name="place_and_year"
+                    placeholder="" formControlName="place_and_year"/>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="language" translate="BOOKS.LANGUAGE"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="language" class="form-control form-control-solid" name="language"
+                    placeholder="" formControlName="language"/>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-xl-4">
+              <img style="opacity: 0.4;margin-top: 10px" src="../../../../assets/media/logos/books.png" height="301" width="300"/></div>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-8">
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="explanation" translate="BOOKS.EXPLANATION"></label>
+                <div class="col-lg-8 fv-row">
+                  <textarea id="explanation" class="form-control form-control-solid" name="explanation"
+                            rows="3" formControlName="explanation"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="vol" translate="BOOKS.VOL"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="vol" class="form-control form-control-solid" name="vol"
+                    placeholder="" formControlName="vol"/>
+                </div>
+              </div>
+              <div class="row">
+                <label class="col-lg-4 col-form-label fw-bold fs-6" for="number_of_pages" translate="BOOKS.NUMBEROFPAGES"></label>
+                <div class="col-lg-8 fv-row">
+                  <input
+                    type="text" id="number_of_pages" class="form-control form-control-solid" name="number_of_pages"
+                    placeholder="" formControlName="number_of_pages"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button
+          type="reset" class="btn btn-warning btn-active-light-primary me-2" (click)="reset()" >
+          Reset
+        </button>
+        <button type="button" class="btn btn-success" (click)="save()">
+          <span translate="ROLES.SAVE"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

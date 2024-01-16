@@ -1,0 +1,93 @@
+<div class="row">
+
+  <div class="card">
+    <div class="card-header border-0 pt-5">
+      <h3 class="card-title align-items-start flex-column">
+        <span class="card-label fw-bolder fs-3 mb-1">Müşteri Ekle</span>
+        <span class="text-muted mt-1 fw-bold fs-7"></span>
+      </h3>
+
+      <div class="position-relative my-1">
+          <span [inlineSVG]="'./assets/media/icons/duotune/general/gen021.svg'"
+                class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ps-10"></span>
+        <input type="text" class="form-control form-control-sm form-control-solid w-100 ps-10 fs-2"
+               name="SearchStudents" value="" placeholder="Müşteri Ara" [(ngModel)]="searchText" (ngModelChange)="search($event)"/>
+      </div>
+
+
+      <button type="button" class="btn btn-success btn-label waves-effect waves-light btn-sm m-4" (click)="addData()">
+        <i class="fa fa-plus-square label-icon align-middle fs-3 me-2"></i>
+        <span>Ekle</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+        <thead>
+        <tr class="fw-bolder text-muted bg-light">
+
+          <th class="text-center">Müşteri Kodu</th>
+          <th class="text-center">Müşteri Adı</th>
+          <th class="text-center">Müşteri Soyadı</th>
+          <th class="text-center">Müşteri Kayıt Tarihi</th>
+          <th class="text-center">Müşteri Telefon No</th>
+          <th class="text-center"></th>
+          <th class="text-center"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of data" (click)="openRow(row)">
+
+          <td class="text-center {{(selectedRow === row)?'card-selected':''}}" >
+            <span><b>{{row?.id}}</b></span></td>
+          <td class="text-center"><span><b>{{row?.musteriAd}}</b></span></td>
+          <td class="text-center"><span><b>{{row?.musteriSoyad}}</b></span></td>
+
+
+          <td class="text-center">
+            <span><b>{{row?.musteriKayitTarihi | date: 'dd/MM/yyyy HH:mm'}}</b></span></td>
+          <td class="text-center"><span><b>{{row?.musteriTelefonNo}}</b></span></td>
+          <td class="text-center">
+
+
+
+            <button type="button" class="btn btn-primary btn-label waves-effect waves-light btn-sm"
+                    (click)="editData(row)">
+              <i class="fa fa-edit label-icon align-middle fs-3 me-2"></i><span translate="ROLES.EDIT"></span>
+            </button>
+          </td>
+          <td class="text-center">
+            <button type="button" class="btn btn-danger btn-label waves-effect waves-light btn-sm"
+                    (click)="deleteData(row)">
+              <i class="fa fa-trash label-icon align-middle fs-3 me-2"></i>
+              <span translate="ROLES.DELETE"></span>
+            </button>
+          </td>
+          <!--
+          <td class="text-center">
+            <button type="button" class="btn btn-warning btn-label waves-effect waves-light btn-sm"
+                    (click)="downloadReport2(row)">
+
+              Raporu İndir
+            </button>
+          </td>
+          -->
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+
+  <button type="button" class="btn btn-warning btn-label waves-effect waves-light btn-sm" (click)="downloadReport2({id:2})">
+    <i class="fas fa-download" style="font-size: 1.2em;"></i> Raporu İndir
+  </button>
+
+
+</div><!--bu rowun bitişidirr!!!!-->
+
+<app-musteri-detay [model]="detailRow" (cancel)="cancelDetail($event)"></app-musteri-detay>

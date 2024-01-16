@@ -1,0 +1,89 @@
+<div class="drawer-overlay" *ngIf="active"></div>
+<div *ngIf="active" class="modal flip show" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable {{fullscreen?'modal-fullscreen':''}} ">
+    <div *ngIf="active" class="card modal-content">
+      <div class="modal-header">
+        <h2>Makina Ekle veya Değiştir</h2>
+        <div class="btn btn-sm btn-icon btn-active-danger" (click)="dismiss()">
+          <span class="svg-icon svg-icon-1" [inlineSVG]="'./assets/media/icons/duotune/arrows/arr061.svg'"></span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+
+        <form [formGroup]="modalForm" class="w-100 position-relative" autoComplete="off">
+          <input type="hidden" formControlName="id"/>
+
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="makinaAdi" >Makina Adı: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="makinaAdi" class="form-control form-control-solid px-15" name="makinaAdi"
+                placeholder="" formControlName="makinaAdi"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="makinaAdet" >Makina Adet: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="number" id="makinaAdet" class="form-control form-control-solid px-15" name="makinaAdet"
+                placeholder="" formControlName="makinaAdet"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="makinaFiyat" >Makina Fiyat: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="number" id="makinaFiyat" class="form-control form-control-solid px-15" name="makinaFiyat"
+                placeholder="" formControlName="makinaFiyat"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="makinaTarih" >Makina Tarih: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="datetime-local" id="makinaTarih" class="form-control form-control-solid px-15" name="makinaTarih"
+                placeholder="" formControlName="makinaTarih"/>
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </form>
+
+
+
+
+          <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="save()">
+            <span  translate="ROLES.SAVE"></span>
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+
+
+  </div>
+
+  </div>
+<div>
+  <br>
+  <br>
+
+
+</div>

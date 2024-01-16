@@ -1,0 +1,190 @@
+<!-- begin::Row -->
+<div class="row g-5 g-xl-8">
+  <div class="col-xl-4">
+    <div class="card bg-danger hoverable card-xl-stretch mb-xl-8">
+      <div class="card-body">
+        <span [inlineSVG]="'./assets/media/icons/duotune/communication/com006.svg'"
+              class="svg-icon svg-icon-2x svg-icon-3x ms-n1"
+              [ngClass]="'svg-icon-white'"></span>
+        <div [ngClass]="'text-inverse-danger'" class="fw-bolder fs-2 mb-2 mt-5">
+          <span translate="MENU.DEFINITIONS"></span>
+        </div>
+        <div class="fw-bold" [ngClass]="'text-inverse-danger fs-7'">
+          <span translate="DASHBOARD.DEFINITIONSDESC"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4">
+    <div class="card bg-primary hoverable card-xl-stretch mb-xl-8">
+      <div class="card-body">
+        <span [inlineSVG]="'./assets/media/icons/duotune/general/gen017.svg'"
+              class="svg-icon svg-icon-2x svg-icon-3x ms-n1"
+              [ngClass]="'svg-icon-white'"></span>
+        <div [ngClass]="'text-inverse-primary'" class="fw-bolder fs-2 mb-2 mt-5">
+          <span translate="MENU.CUSTOMERS"></span>
+        </div>
+        <div class="fw-bold" [ngClass]="'text-inverse-primary fs-7'">
+          <span translate="DASHBOARD.CUSTOMERSDESC"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4">
+    <div class="card bg-success hoverable card-xl-stretch mb-xl-8">
+      <div class="card-body">
+        <span [inlineSVG]="'./assets/media/icons/duotune/files/fil016.svg'"
+              class="svg-icon svg-icon-2x svg-icon-3x ms-n1"
+              [ngClass]="'svg-icon-white'"></span>
+        <div [ngClass]="'text-inverse-success'" class="fw-bolder fs-2 mb-2 mt-5">
+          <span translate="MENU.BOOKS"></span>
+        </div>
+        <div class="fw-bold" [ngClass]="'text-inverse-success fs-7'">
+          <span translate="DASHBOARD.BOOKSDESC"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end::Row -->
+
+
+<!-- begin::Row -->
+<div class="row g-5 g-xl-8">
+  <div class="col-xl-4">
+    <div class="card card-xl-stretch mb5 mb-xl-8">
+      <!-- begin::Header -->
+      <div class="card-header border-0">
+        <h3 class="card-title fw-bolder text-dark" translate="DASHBOARD.BOOKSTYPES"></h3>
+        <div class="card-toolbar">
+          <!-- begin::Menu -->
+          <button
+            type="button"
+            class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
+            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+            <span [inlineSVG]="'./assets/media/icons/duotune/general/gen024.svg'" class="svg-icon svg-icon-2"></span>
+          </button>
+          <!-- end::Menu -->
+        </div>
+      </div>
+      <!-- end::Header -->
+      <!-- begin::Body -->
+      <div class="card-body pt-0">
+
+        <!-- begin::Item -->
+        <div *ngFor="let row of booksdata" class="d-flex align-items-center bg-light-warning rounded p-5 mb-7">
+          <span class="svg-icon svg-icon-warning me-5">
+            <span [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'" class="svg-icon svg-icon-1"></span>
+          </span>
+          <div class="flex-grow-1 me-2">
+            <a routerLink="/list-storages" class="fw-bolder text-gray-800 text-hover-primary fs-6">
+              {{row.name}}
+            </a>
+            <span class="text-muted fw-bold d-block"><span
+              translate="DASHBOARD.CRITICAL"></span> : {{row.critical_size}} </span>
+          </div>
+          <span class="fw-bolder text-warning py-1">{{row.detail_count}}</span>
+        </div>
+        <!-- end::Item -->
+
+      </div>
+      <!-- end::Body -->
+
+    </div>
+  </div>
+
+  <div class="col-xl-4">
+    <div class="card card-xl-stretch mb5 mb-xl-8">
+      <!-- begin::Header -->
+      <div class="card-header border-0">
+        <h3 class="card-title fw-bolder text-dark" translate="MENU.STUDENT"></h3>
+        <div class="card-toolbar">
+          <!-- begin::Menu -->
+          <button
+            type="button"
+            class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
+            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+            <span [inlineSVG]="'./assets/media/icons/duotune/general/gen024.svg'" class="svg-icon svg-icon-2"></span>
+          </button>
+          <!-- end::Menu -->
+        </div>
+      </div>
+      <!-- end::Header -->
+      <!-- begin::Body -->
+      <div class="card-body pt-0">
+        <!-- begin::Item -->
+        <div *ngFor="let row of studentsdata"
+             class="d-flex align-items-center {{row.emergency ? 'bg-light-danger' : 'bg-light-warning'}}  rounded p-5 mb-7">
+          <!-- begin::Icon -->
+          <span class="svg-icon svg-icon-warning me-5">
+            <span [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'" class="svg-icon svg-icon-1"></span>
+          </span>
+          <!-- end::Icon -->
+          <!-- begin::Title -->
+          <div class="flex-grow-1 me-2">
+            <a routerLink="/orders" class="fw-bolder text-gray-800 text-hover-primary fs-6">
+              {{row.description}}
+            </a>
+            <span class="text-muted fw-bold d-block">{{row.contact_details}}</span>
+          </div>
+          <!-- end::Title -->
+          <!-- begin::Lable -->
+          <span class="fw-bolder text-warning py-1">1</span>
+          <!-- end::Lable -->
+        </div>
+        <!-- end::Item -->
+      </div>
+      <!-- end::Body -->
+
+    </div>
+  </div>
+
+  <div class="col-xl-4">
+    <div class="card card-xl-stretch mb5 mb-xl-8">
+      <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+          <span class="card-label fw-bolder fs-3 mb-1" translate="DASHBOARD.TRENDSTITLE"></span>
+          <span class="text-muted fw-bold fs-7"></span>
+        </h3>
+
+        <div class="card-toolbar">
+          <!-- begin::Menu -->
+          <button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
+                  data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
+            <span [inlineSVG]="'./assets/media/icons/duotune/general/gen024.svg'" class="svg-icon svg-icon-2"></span>
+          </button>
+          <!-- end::Menu -->
+        </div>
+      </div>
+
+      <div class="card-body pt-0">
+        <!-- begin::Item -->
+        <div *ngFor="let row of transactionsdata"
+             class="d-flex align-items-center bg-light-success rounded p-5 mb-7">
+          <!-- begin::Icon -->
+          <span class="svg-icon svg-icon-warning me-5">
+            <span [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'" class="svg-icon svg-icon-1"></span>
+          </span>
+          <!-- end::Icon -->
+          <!-- begin::Title -->
+          <div class="flex-grow-1 me-2">
+            <a routerLink="/orders" class="fw-bolder text-gray-800 text-hover-primary fs-6">
+              {{row.value_tr}}
+            </a>
+            <span class="text-muted fw-bold d-block">&nbsp;</span>
+          </div>
+          <!-- end::Title -->
+          <!-- begin::Lable -->
+          <span class="fw-bolder text-warning py-1">{{row.sayi}}</span>
+          <!-- end::Lable -->
+        </div>
+        <!-- end::Item -->
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- end::Row -->

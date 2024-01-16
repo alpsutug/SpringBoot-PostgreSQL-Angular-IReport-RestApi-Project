@@ -1,0 +1,81 @@
+//
+// Theme style
+//
+
+// Initialize
+@import "init";
+
+// Components
+@import "./core/components/components";
+@import "components/components";
+
+// Layout
+@import "./core/layout/base/layout";
+@import "layout/layout";
+
+// Select 2
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// ... or
+//@import "~@ng-select/ng-select/themes/material.theme.css";
+
+.card-selected {
+  border-left: 5px solid $success-active !important;
+}
+
+thead {
+  tr {
+    border-bottom: 1px dashed var(--kt-card-border-color) !important;
+  }
+}
+
+.table-responsive {
+  border-top: 1px dashed var(--kt-card-border-color) !important;
+}
+
+table {
+  td, th {
+    border-left: 1px dashed var(--kt-card-border-color) !important;
+    border-right: 1px dashed var(--kt-card-border-color) !important;
+  }
+}
+
+.pl-15 {
+  padding-left: 1.5rem !important
+}
+
+.pr-15 {
+  padding-right: 1.5rem !important
+}
+
+.card-footer .pt-5 .pl-15 .pr-15 {
+  border-top: 1px dashed var(--kt-card-border-color) !important;
+}
+
+.top-line {
+  color: var(--kt-card-cap-color);
+  background-color: var(--kt-card-cap-bg);
+  border-top: 1px solid var(--kt-card-border-color);
+}
+
+.border-red-dashed {
+  border: 1px dashed var(--kt-code-color) !important;
+}
+
+.start-stop {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.blockgraypnl {
+  padding: 10px;
+  border: 3px dashed var(--kt-card-border-color) !important;
+  background-color: var(--kt-pagination-disabled-color)  !important;
+}
+
+.blockgreenpnl {
+  padding: 10px;
+  border: 3px dashed var(--kt-card-border-color) !important;
+  background-color: #C9F7F5 !important;
+}

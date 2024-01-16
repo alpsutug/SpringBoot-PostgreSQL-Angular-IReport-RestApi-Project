@@ -1,0 +1,27 @@
+export const environment = {
+  production: false,
+  appVersion: 'v1.0.0.2',
+  isMockEnabled: true,
+  USERDATA_KEY: 'authf649fc9a5f55',
+  authApi: 'http://localhost:8080/kullanici/login',
+  makinalarApi: 'http://localhost:8080/makina/makinalar',
+  remmakinalarApi: 'http://localhost:8080/makina/delete',
+  remmusterilerApi: 'http://localhost:8080/musteri/delete',
+  musterilerApi: 'http://localhost:8080/musteri/musteriler',
+  bakimplanApi: 'http://localhost:8080/bakimplan/bakimplanlar',
+  rembakimplanApi: 'http://localhost:8080/bakimplan/delete',
+  reportsApi:'http://localhost:8080/api/reports',
+
+
+  rolesApi: 'http://localhost:8080/api/app-roles',
+  appRoleObjectsApi: 'http://localhost:8080/api/app-role-objects',
+  usersApi:'http://localhost:8080/api/users',
+  lookUpsApi:'http://localhost:8080/api/look-ups',
+  dashboardApi:'http://localhost:8080/api/dashboard',
+  customersApi:'http://localhost:8080/api/customers',
+  booksApi:'http://localhost:8080/api/books',
+  epcReadingsApi:'http://localhost:8080/api/epc-readings',
+  studentsApi:'http://localhost:8080/api/students',
+  debitsApi:'http://localhost:8080/api/student-books',
+  alarmsApi:'http://localhost:8080/api/alarms',
+};

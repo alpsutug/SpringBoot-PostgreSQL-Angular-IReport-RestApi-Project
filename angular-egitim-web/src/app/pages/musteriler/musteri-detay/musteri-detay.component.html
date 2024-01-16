@@ -1,0 +1,73 @@
+<div class="drawer-overlay" *ngIf="active"></div>
+<div *ngIf="active" class="modal flip show" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable {{fullscreen?'modal-fullscreen':''}} ">
+    <div *ngIf="active" class="card modal-content">
+      <div class="modal-header">
+        <h2>Müşteri Ekle veya Değiştir</h2>
+        <div class="btn btn-sm btn-icon btn-active-danger" (click)="dismiss()">
+          <span class="svg-icon svg-icon-1" [inlineSVG]="'./assets/media/icons/duotune/arrows/arr061.svg'"></span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+
+        <form [formGroup]="modalForm" class="w-100 position-relative" autoComplete="off">
+          <input type="hidden" formControlName="id"/>
+
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="musteriAd" >Müşteri Adı: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="musteriAd" class="form-control form-control-solid px-15" name="musteriAd"
+                placeholder="" formControlName="musteriAd"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="musteriSoyad" >Müşteri Soyadı: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="musteriSoyad" class="form-control form-control-solid px-15" name="musteriSoyad"
+                placeholder="" formControlName="musteriSoyad"/>
+            </div>
+          </div>
+
+
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="musteriKayitTarihi" >Müşteri Kayıt Tarihi: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="datetime-local" id="musteriKayitTarihi" class="form-control form-control-solid px-15" name="musteriKayitTarihi"
+                placeholder="" formControlName="musteriKayitTarihi"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="musteriTelefonNo" >Müşteri Telefon No: </label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="musteriTelefonNo" class="form-control form-control-solid px-15" name="musteriTelefonNo"
+                placeholder="" formControlName="musteriTelefonNo"/>
+            </div>
+          </div>
+
+
+
+
+
+        </form>
+
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="save()">
+            <span  translate="ROLES.SAVE"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

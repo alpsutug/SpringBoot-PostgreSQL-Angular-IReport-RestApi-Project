@@ -1,0 +1,87 @@
+<div class="drawer-overlay" *ngIf="active"></div>
+<div *ngIf="active" class="modal flip show" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable {{fullscreen?'modal-fullscreen':''}} ">
+    <div *ngIf="active" class="card modal-content">
+      <div class="modal-header">
+        <h2>{{title}}</h2>
+        <div class="btn btn-sm btn-icon btn-active-color-primary" (click)="dismiss()">
+          <span class="svg-icon svg-icon-1" [inlineSVG]="'./assets/media/icons/duotune/arrows/arr061.svg'"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="modalForm" class="w-100 position-relative" autoComplete="off">
+          <input type="hidden" formControlName="id"/>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="username" translate="USERS.USERNAME"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="username" class="form-control form-control-solid px-15" name="username"
+                placeholder="" formControlName="username"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="password"  translate="USERS.PASSWORD"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="password" id="password" class="form-control form-control-solid px-15" name="password"
+                placeholder="" formControlName="password"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="cmbRoles"  translate="ROLES.TITLE"></label>
+            <div class="col-lg-8 fv-row">
+              <ng-select [items]="appRoles"
+                         id="cmbRoles"
+                         class=""
+                         bindLabel="value"
+                         bindValue="id"
+                         formControlName="app_role_id"
+                         placeholder="Choose a role"
+                         [hideSelected]="false"
+                         [multiple]="false">
+              </ng-select>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="first_name" translate="USERS.FIRSTNAME"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="first_name" class="form-control form-control-solid px-15" name="first_name"
+                placeholder="" formControlName="first_name"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="last_name" translate="USERS.LASTNAME"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="last_name" class="form-control form-control-solid px-15" name="last_name"
+                placeholder="" formControlName="last_name"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="email" translate="USERS.EMAIL"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="email" id="email" class="form-control form-control-solid px-15" name="email"
+                placeholder="" formControlName="email"/>
+            </div>
+          </div>
+
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="save()"><span  translate="USERS.SAVE"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

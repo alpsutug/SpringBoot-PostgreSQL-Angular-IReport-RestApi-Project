@@ -1,0 +1,93 @@
+<div class="drawer-overlay" *ngIf="active"></div>
+<div *ngIf="active" class="modal flip show" style="display: block;" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable {{fullscreen?'modal-fullscreen':''}} ">
+    <div *ngIf="active" class="card modal-content">
+      <div class="modal-header">
+        <h2>{{title}}</h2>
+        <div class="btn btn-sm btn-icon btn-active-color-primary" (click)="dismiss()">
+          <span class="svg-icon svg-icon-1" [inlineSVG]="'./assets/media/icons/duotune/arrows/arr061.svg'"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="modalForm" class="w-100 position-relative" autoComplete="off">
+          <input type="hidden" formControlName="id"/>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="identification_number"
+                   translate="STUDENTS.IDENTIFICATIONNUMBER"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="identification_number" class="form-control form-control-solid px-15"
+                name="identification_number"
+                placeholder="" formControlName="identification_number"/>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="student_number"
+                   translate="STUDENTS.NUMBER"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="student_number" class="form-control form-control-solid px-15" name="student_number"
+                placeholder="" formControlName="student_number"/>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="first_name" translate="STUDENTS.FIRSTNAME"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="first_name" class="form-control form-control-solid px-15" name="first_name"
+                placeholder="" formControlName="first_name"
+                [ngClass]="{ 'is-invalid': modalForm.controls['first_name'].invalid,
+                'is-valid': modalForm.controls['first_name'].valid }"/>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="last_name" translate="STUDENTS.LASTNAME"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="text" id="last_name" class="form-control form-control-solid px-15" name="last_name"
+                placeholder="" formControlName="last_name" [ngClass]="{ 'is-invalid': modalForm.controls['last_name'].invalid,
+                'is-valid': modalForm.controls['last_name'].valid }"/>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="phone_number"
+                   translate="STUDENTS.PHONENUMBER"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="tel" id="phone_number" class="form-control form-control-solid px-15" name="phone_number"
+                placeholder="" formControlName="phone_number"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="email" translate="STUDENTS.EMAIL"></label>
+            <div class="col-lg-8 fv-row">
+              <input
+                type="email" id="email" class="form-control form-control-solid px-15" name="email"
+                placeholder="" formControlName="email" [ngClass]="{ 'is-invalid': modalForm.controls['email'].invalid,
+                'is-valid': modalForm.controls['email'].valid }"/>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label fw-bold fs-6" for="cbxActive" translate="STUDENTS.ACTIVE"></label>
+            <div class="col-lg-8 fv-row">
+              <div class="form-check form-check-solid form-switch">
+                <input class="form-check-input" type="checkbox" id="cbxActive" formControlName="active"/>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="save()">
+          <span translate="STUDENTS.SAVE"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

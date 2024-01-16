@@ -1,0 +1,90 @@
+<!-- begin::Row -->
+<div class="row g-5 g-xl-8">
+
+  <div class="card">
+    <div class="card-body py-3">
+      <div class="col-xl-1"></div>
+      <div class="col-xl-5">
+        <div class="position-relative my-1">
+          <span [inlineSVG]="'./assets/media/icons/duotune/general/gen021.svg'"
+                class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ps-10"></span>
+          <input type="text" class="form-control form-control-sm form-control-solid w-100 ps-10 fs-2"
+                 name="SearchBooks" value="" placeholder="Search Books" [(ngModel)]="searchBooks" (ngModelChange)="searchBook()"/>
+        </div>
+      </div>
+      <div class="col-xl-6">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header border-0 pt-5">
+      <h3 class="card-title align-items-start flex-column">
+        <span class="card-label fw-bolder fs-3 mb-1" translate="BOOKS.TITLE"></span>
+        <span class="text-muted mt-1 fw-bold fs-7"></span>
+      </h3>
+      <button type="button" class="btn btn-success btn-label waves-effect waves-light btn-sm m-4"
+              (click)="addData(row)">
+        <i class="fa fa-plus-square label-icon align-middle fs-3 me-2"></i>
+        <span translate="BOOKS.ADD"></span>
+      </button>
+    </div>
+
+    <div class="card-body py-3">
+      <div class="table-responsive">
+        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+          <thead>
+          <tr class="fw-bolder text-muted bg-light">
+            <th class="text-center"><span class="hidelbl" translate="BOOKS.CODE"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="BOOKS.AUTHOR_NAME"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="BOOKS.TITLE_OF_WORK"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="BOOKS.EDIT"></span></th>
+            <th class="text-center"><span class="hidelbl" translate="BOOKS.DELETE"></span></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let row of data" (click)="openRow(row)">
+            <td class="text-center {{(selectedRow === row)?'card-selected':''}}" data-label="Code">
+              <span><b>{{row?.id}}</b></span></td>
+            <td data-label="AUTHOR_NAME" class="text-center">
+              <span><b>{{row?.author_name}}</b></span><br>
+              <span class="badge badge-light-primary">{{row?.epc_code}}</span>
+            </td>
+            <td data-label="TITLE_OF_WORK" class="text-center">
+              <span><b>{{row?.title_of_work}}</b></span><br>
+              <span class="badge badge-light-success">{{row?.student}}</span>
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-label waves-effect waves-light btn-sm"
+                      (click)="editData(row)">
+                <i class="fa fa-edit label-icon align-middle fs-3 me-2"></i><span translate="BOOKS.EDIT"></span>
+              </button>
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn btn-danger btn-label waves-effect waves-light btn-sm"
+                      (click)="deleteData(row)">
+                <i class="fa fa-trash label-icon align-middle fs-3 me-2"></i>
+                <span translate="BOOKS.DELETE"></span>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-header card-footer pt-5 pl-15 pr-15 ">
+        <div><span translate="BOOKS.TOTAL"></span> : <b> {{pagging.total}}</b></div>
+        <ngb-pagination [collectionSize]="pagging.total"
+                        [(page)]="pagging.page"
+                        [pageSize]="pagging.size"
+                        [maxSize]="5"
+                        (pageChange)="setPage($event);">
+        </ngb-pagination>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-book-detail [model]="detailRow" [modalTitle]="modalTitle" (cancel)="cancelDetail($event)"></app-book-detail>
