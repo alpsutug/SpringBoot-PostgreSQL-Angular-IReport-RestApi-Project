@@ -3,7 +3,7 @@ Spring Boot,PostgreSQL,Angular ve IReport kullanarak düzenleme,silme,kaydetme v
 
 PostgreSQL -> Öncelikle machinedb isminde bir veri tabanı oluşturdum.user,makina,musteri ve bakim_plan isminde tablolarımı oluşturdum.
 
-Spring Boot -> Veri tabanı tablolarıma uygun model sınıflarımı oluşturduktan sonra controller,service ve repository sınıflarımı kodladımı java dilinde ve INTELLIJ IDEA kullanarak kodladım.
+Spring Boot -> Veri tabanı tablolarıma uygun model sınıflarımı oluşturduktan sonra controller,service ve repository sınıflarımı kodlarımı java dilinde ve INTELLIJ IDEA kullanarak kodladım.
 
 Angular -> Yine INTELLIJ IDEA'da Angular projesi oluşturarak sayfalarımı tasarladım ve java projem ile bağlantılarını yaptım.
 
