@@ -11,3 +11,6 @@ IReport -> IReport kullanarak veri tabanımdan çektiğim veriler ile düzenli t
 
 Hem backend hem de frontend olarak geliştirdiğim bu projede yeni teknolojiler kullandım ve  RestApi,Spring Framework,Raporlama Araçları,Sql,Angular metod kullanımları ve java mikroservis mimarisi gibi pek çok alanda
 bilgi sahibi oldum.
+
+![image](https://github.com/alpsutug/Spring-PostgreSQL-Angular-IReport-RestApi-Project/assets/119755534/94bd01ef-571d-4b57-a2cc-c63115949f7b)
+
