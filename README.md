@@ -1,5 +1,5 @@
 # Spring-PostgreSQL-Angular-IReport-RestApi-Project
-Spring Boot,PostgreSQL,Angular ve IReport kullanarak düzenleme,silme,kaydetme ve raporlama işlemlerini içeren web projesi.
+Spring Boot,PostgreSQL,Angular ve IReport kullanarak login,düzenleme,silme,kaydetme ve raporlama işlemlerini içeren web projesi.
 
 PostgreSQL -> Öncelikle machinedb isminde bir veri tabanı oluşturdum.user,makina,musteri ve bakim_plan isminde tablolarımı oluşturdum.
 
